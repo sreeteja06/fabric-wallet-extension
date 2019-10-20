@@ -1,0 +1,35 @@
+{
+  "manifest_version": 2,
+  "name": "Fabric Wallet",
+  "version": "0.1",
+  "description": "manages the user wallets for hyperledger fabric",
+  "permissions": [
+    "storage",
+    "declarativeContent",
+    "activeTab"
+  ],
+  "background": {
+    "scripts": [
+      "JS/background.js"
+    ],
+    "persistent": false
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": [
+        "JS/jquery.min.js",
+        "JS/content.js"
+      ]
+    }
+  ],
+  "page_action": {
+    "default_popup": "html/popup.html",
+    "default_icon": {
+      "128": "assets/img/icon.png"
+    }
+  },
+  "options_page": "html/options.html"
+}
